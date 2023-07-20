@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Button } from 'bootstrap';
 
 // Current Weather Checker for certain City provided as input
 const Weather = () => {
@@ -10,6 +11,7 @@ const Weather = () => {
   const apiKey = process.env.REACT_APP_API_KEY;
   const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
+  
   const fetchWeatherData = () => {
     // Check if a city is provided before making the API request
     if (city.trim() === '') {
@@ -49,13 +51,16 @@ const Weather = () => {
     <div>
       <h1>Weather App</h1>
       <input type="text" value={city} onChange={handleCityChange} />
-      <button onClick={handleSearch}>Search</button>
+      <Button variant="primary" onClick={handleSearch} className="p-2" >Search</Button>
 
+        {/*  This code shows that whenever "weatherData is true or has value it will display the given output inside the && ()" */}
       {weatherData && (
         <div>
           <h2>Weather Information for {weatherData.name}</h2>
           <p>Temperature: {weatherData.main.temp} °C</p>
           <p>Weather Conditions: {weatherData.weather[0].description}</p>
+          <p>Location: Longitude: {weatherData.coord.lon} </p>
+          <p>Location: Latitude: {weatherData.coord.lat} </p>
         </div>
       )}
     </div>

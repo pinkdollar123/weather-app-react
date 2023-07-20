@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+// imported Weather Component from the apis folder 
 import Weather from './apis/WeatherAPI';
+// Default bootstrap styles by adding this line
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
         <Weather />
       </header>
     </div>
