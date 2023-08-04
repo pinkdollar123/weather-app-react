@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 // imported Weather Component from the apis folder 
 import Weather from './apis/WeatherAPI';
@@ -10,7 +9,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      
         <Weather />
       </header>
     </div>
